@@ -587,6 +587,15 @@ function add_custom_admin_bar_styles() {
             #welcome-panel { display: none !important; }
             #dashboard_site_health { display: none !important; }
             #rg_forms_dashboard { display: none !important; }
+			#toplevel_page_andcoperfect-andcoperfect-admin-page { display: none !important; }
+			#toplevel_page_wc-status-tab-logs { display: none !important; }
+			#toplevel_page_crontrol_admin_manage_page { display: none !important; }
+			#toplevel_page_gf_edit_forms { display: none !important; }
+			#menu-posts-wpsl_stores { display: none !important; }
+			#menu-posts-product { display: none !important; }
+			#toplevel_page_tm-menu-main { display: none !important; }
+			#toplevel_page_litespeed { display: none !important; }
+			#rank_math_dashboard_widget { display: none !important; }
             /* Voeg hier meer CSS-styling toe indien nodig */
         ";
 
