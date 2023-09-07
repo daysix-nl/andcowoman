@@ -597,6 +597,7 @@ function add_custom_admin_bar_styles() {
 			#toplevel_page_tm-menu-main { display: none !important; }
 			#toplevel_page_litespeed { display: none !important; }
 			#rank_math_dashboard_widget { display: none !important; }
+			
             /* Voeg hier meer CSS-styling toe indien nodig */
         ";
 
