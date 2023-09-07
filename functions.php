@@ -505,7 +505,7 @@ function customize_dashboard_menu() {
     global $menu;
 
     // Vervang "super admin" door de gebruikersnaam die je wilt tonen.
-    $allowed_user = 'kevin';
+    $allowed_users = array('kevin', 'rob');
 
     // Haal de huidige ingelogde gebruiker op.
     $current_user = wp_get_current_user();
@@ -570,8 +570,9 @@ function add_custom_admin_bar_styles() {
     // Controleren of de gebruiker is ingelogd
     if (is_user_logged_in()) {
         // Gebruiker met de gebruikersnaam "xxx" uitsluiten
+        $allowed_users = array('kevin', 'rob');
         $user = wp_get_current_user();
-        if ($user->user_login === 'xxx') {
+        if (in_array($user->user_login, $allowed_users)) {
             return;
         }
 
