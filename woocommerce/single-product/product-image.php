@@ -32,13 +32,17 @@ global $product;
 			<div class="col-12">
 				<div class="arrowrl relative">	
 					<div class="slider-for">
-					<img id="myimage next-slide" src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>"  data-id="<?php echo $loop->post->ID; ?>">
-						<?php $attachment_ids = $product->get_gallery_image_ids();
-							foreach( $attachment_ids as $attachment_id ) 
-							{ ?>
-
-							<img id="myimage next-slide" class=" " src="<?php echo $Original_image_url = wp_get_attachment_url( $attachment_id ); ?>" alt="">
+						<?php if(get_the_post_thumbnail_url(get_the_ID())) { ?>
+							<img id="myimage" src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>"  data-id="<?php echo get_the_ID(); ?>">
 						<?php } ?>
+						<?php
+						$attachment_ids = $product->get_gallery_image_ids();
+						if (is_array($attachment_ids)) {
+							foreach ($attachment_ids as $attachment_id) { ?>
+							<img id="myimage next-slide" class="" src="<?php echo wp_get_attachment_url($attachment_id); ?>" alt="">
+							<?php }
+						}
+						?>
 					</div>
 					<div class="next_arrow">
 						<img class="arrowproduct" src="/wp-content/themes/andcowoman/img/icons/arrow-r.svg">
@@ -46,17 +50,19 @@ global $product;
 					<div class="arrow_prev">
 						<img class="arrowproduct" src="/wp-content/themes/andcowoman/img/icons/arrow-l.svg">
 					</div>
+				
 				</div>
 			</div>
 			<div class="col-12 pt-half">
 				<div class="slider-nav d-flex-c">
-					 <img class="responsive-product" src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>"  data-id="<?php echo $loop->post->ID; ?>">
+					 <img class="responsive-product" src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>"  data-id="<?php echo get_the_ID(); ?>">
 					<?php $attachment_ids = $product->get_gallery_image_ids();
-							foreach( $attachment_ids as $attachment_id ) 
-					{ ?>
-
-						<img class="responsive-product" src="<?php echo $Original_image_url = wp_get_attachment_url( $attachment_id ); ?>" alt="">
-					<?php } ?>
+					if (is_array($attachment_ids)) {
+						foreach( $attachment_ids as $attachment_id ) { ?>
+							<img class="responsive-product" src="<?php echo $Original_image_url = wp_get_attachment_url( $attachment_id ); ?>" alt="">
+						<?php } 
+					}
+					?>
 				</div>
 			</div>
 		</div>

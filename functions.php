@@ -37,7 +37,6 @@ function add_theme_scripts() {
 add_filter( 'use_block_editor_for_post', '__return_false' ); 
 
 
-
 // Menu
 
 function day_six_config(){
@@ -738,3 +737,168 @@ add_filter('manage_pages_columns', 'verwijder_auteur_kolom');
 
 
 
+
+
+
+function get_my_products( $request ) {
+
+    $queryParams = $request->get_query_params();
+    $paged = isset($queryParams['page']) ? $queryParams['page'] : 1;
+    $url = isset($queryParams['full_url']) ? $queryParams['full_url'] : null;
+    if ($url) {
+        $parsedUrl = parse_url($url);
+        if (isset($parsedUrl['path'])) {
+            $path = $parsedUrl['path'];
+
+        if (strpos($path, '/product-category/') !== false) {
+            $exploded = explode('/product-category', $path);
+
+            if (isset($exploded[1])) {
+                $taxonomy = str_replace("/", "", $exploded[1]);
+                
+            } else {
+            $taxonomy = get_terms(array(
+                'taxonomy' => 'product_cat',
+                'hide_empty' => false,
+                'fields' => 'slugs',
+            ));
+        }
+        } else {
+            $taxonomy = get_terms(array(
+                'taxonomy' => 'product_cat',
+                'hide_empty' => false,
+                'fields' => 'slugs',
+            ));
+        }
+        } 
+    }
+
+    $search = isset($queryParams['s']) ? $queryParams['s'] : null;
+    $kleur = isset($queryParams['filter_kleur']) ? $queryParams['filter_kleur'] : null;
+    $maat = isset($queryParams['filter_maat']) ? $queryParams['filter_maat'] : null;
+
+    $args = array(
+        'post_type' => 'product',
+        'posts_per_page' => 24,
+        'paged' => $paged,
+        'orderby' => 'menu_order',
+        'order' => 'DESC',
+        's' => $search,
+        'meta_query' => array(
+            array(
+                'key' => '_stock_status',
+                'value' => 'instock',
+                'compare' => '=',
+            )
+        ),  
+    );
+
+    $tax_queries = array(
+        array(
+            'taxonomy' => 'product_cat',
+            'field' => 'slug',
+            'terms' => $taxonomy,
+        )
+    );
+
+    if (!empty($kleur)) {
+        $tax_queries[] = array(
+            'taxonomy' => 'pa_kleur',
+            'field' => 'slug',
+            'terms' => array($kleur),
+            'operator' => 'AND',
+        );
+    }
+
+    if (!empty($maat)) {
+        $tax_queries[] = array(
+            'taxonomy' => 'pa_maat',
+            'field' => 'slug',
+            'terms' => array($maat),
+            'operator' => 'AND',
+        );
+    }
+
+    $args['tax_query'] = $tax_queries;
+
+
+  $query = new WP_Query($args);
+  $products = [];
+
+  if ($query->have_posts()) {
+    while ($query->have_posts()) {
+      $query->the_post();
+        $product = wc_get_product(get_the_ID());
+
+        // For gallery images
+        $gallery_image_ids = get_post_meta(get_the_ID(), '_product_image_gallery', true);
+        $gallery_images = [];
+        if ($gallery_image_ids) {
+            $gallery_image_ids = explode(',', $gallery_image_ids);
+            foreach($gallery_image_ids as $image_id) {
+                $gallery_images[] = wp_get_attachment_image_url($image_id, 'single-post-thumbnail');
+            }
+        }
+
+        // For thumbnail
+        $thumbnail_url = get_the_post_thumbnail_url();
+
+        // For categories
+        $term_ids = wp_get_post_terms(get_the_ID(), 'product_cat', ['fields' => 'ids']);
+        $categories_array = [];
+        foreach ($term_ids as $term_id) {
+            $term = get_term($term_id, 'product_cat');
+            if ($term) {
+                $categories_array[] = $term->name;
+            }
+        }
+        $categories_array = array_reverse($categories_array); 
+
+        $local_url = get_the_post_thumbnail_url(get_the_ID());
+
+        $products[] = array(
+            'id' => get_the_ID(),
+            'title' => get_the_title(),
+            'permalink' => get_the_permalink(),
+            'thumbnail_url' => $local_url,
+            'price_html' => $product->get_price_html(),
+            'categories' => $categories_array, 
+            'gallery_images' => isset($gallery_image_ids[1]) ? wp_get_attachment_image_url($gallery_image_ids[1], 'single-post-thumbnail') : null,
+        );
+    }
+  }
+
+  return new WP_REST_Response($products, 200);
+}
+
+add_action( 'rest_api_init', function () {
+  register_rest_route( 'myproducts/v1', '/list', array(
+    'methods' => 'GET',
+    'callback' => 'get_my_products',
+  ) );
+});
+
+
+
+function rewrite_image_urls_js() {
+    $current_domain = $_SERVER['HTTP_HOST'];
+    if ( 'andcowoman.local' === $current_domain ) {
+        echo "
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const local_domain = 'http://andcowoman.local'; // Replace with your local domain
+            const production_domain = 'https://andcowoman.com'; // Replace with your production domain
+
+            document.querySelectorAll('img').forEach(function(img) {
+                const src = img.getAttribute('src');
+                if (src) {
+                    img.setAttribute('src', src.replace(local_domain, production_domain));
+                }
+            });
+        });
+        </script>
+        ";
+    }
+}
+
+add_action('wp_footer', 'rewrite_image_urls_js');

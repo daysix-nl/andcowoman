@@ -71,42 +71,58 @@ get_header( ); ?>
             <div class="col-12 col-lg-10 p-left">
                 <div class="row">
                 <?php
-                $search = $_GET['s'];
-                $taxonomy  = 'product_tag';
-                $kleur = $_GET['filter_kleur'];
-                $maat = $_GET['filter_maat'];
-                $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
-                if ( is_shop() || is_product_category() ) {
+                $link =  (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                if (isset($link['path'])) {
+                $taxonomy = str_replace("/", "", explode('/product-category', $link['path']))[1];
+                } else {
+
+                    $taxonomy =  get_terms( array(
+                        'taxonomy' => 'product_cat',
+                        'hide_empty' => false,
+                        'fields' => 'slugs',
+                    ) );
+                }
+
+
+                $search = isset($_GET['s']) ? $_GET['s'] : '';
+                $kleur = isset($_GET['filter_kleur']) ? $_GET['filter_kleur'] : '';
+                $maat = isset($_GET['filter_maat']) ? $_GET['filter_maat'] : '';
+
+                if ( is_shop() || is_product_category() ) {                    
                     $args = array(
                         'post_type' => 'product',
-                        'posts_per_page' => 25,
-                        'paged' => $paged, 
-                        'taxonomy' => $taxonomy,
+                        'posts_per_page' => 24,
+                        'paged' => 1,
                         'orderby' => 'menu_order',
                         'order' => 'DESC',
                         's' => $search,
-                        'tax_query' => array(
-                                array(
-                                    'taxonomy' => 'pa_kleur',
-                                    'field'    => 'slug',
-                                    'terms'    => array($kleur),
-                                    'operator' => 'and',
-                                ),
-                                array(
-                                    'taxonomy' => 'pa_maat',
-                                    'field'    => 'slug',
-                                    'terms'    => array($maat),
-                                    'operator' => 'and',
-                                ),
-                            ),
                         'meta_query' => array(
-                                array(
-                                    'key' => '_stock_status',
-                                    'value' => 'instock',
-                                    'compare' => '=',
-                                )
+                            array(
+                                'key' => '_stock_status',
+                                'value' => 'instock',
+                                'compare' => '=',
+                            )
                         ),  
+                        'tax_query' => array(
+                            array(
+                                'taxonomy' => 'product_cat',
+                                'field' => 'slug',
+                                'terms' => $taxonomy, 
+                            ),
+                            array(
+                                'taxonomy' => 'pa_kleur',
+                                'field'    => 'slug',
+                                'terms'    => array($kleur),
+                                'operator' => 'and',
+                            ),
+                            array(
+                                'taxonomy' => 'pa_maat',
+                                'field'    => 'slug',
+                                'terms'    => array($maat),
+                                'operator' => 'and',
+                            ),
+                        ),
                     );
                     $loop = new WP_Query($args);
                     
@@ -153,6 +169,7 @@ get_header( ); ?>
                             ?>
                              <?php echo $loop->post->post_title; ?>
                         </h5>
+
                         <div class="btn-flip">
                             <div class="message2"> <?php if ( $price_html = $product->get_price_html() ) : ?>
                                 <span class="price">
@@ -164,17 +181,15 @@ get_header( ); ?>
                         </a>
                     </div>
                     <?php endwhile;  ?>
-                        <div class="pagination-wordpress">
-                            <?php 
-                            $big = 999999999; 
-                            echo paginate_links( array(
-                                'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-                                'format' => '?paged=%#%',
-                                'current' => max( 1, get_query_var('paged') ),
-                                'total' => $loop->max_num_pages
-                            ) );
-                            ?>
-                        </div>
+
+                    <div id="products-container" class="row"></div>
+                    <div id="loading" class="pb-half" style="display: none;">
+                            <div class="one"></div>
+                            <div class="two"></div>
+                            <div class="three"></div>
+                            <div class="four"></div>
+                    </div>
+
                         <?php
                         
                         wp_reset_postdata();
