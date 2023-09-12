@@ -10,6 +10,7 @@ try {
   let kleur = params.get("filter_kleur")
     ? params.get("filter_kleur")
     : undefined;
+  let lang = params.get("lang") ? params.get("lang") : undefined;
   let s = params.get("s") ? params.get("s") : undefined;
   let fullUrl = window.location.href;
 
@@ -38,6 +39,10 @@ try {
 
     if (s !== undefined) {
       url += `&s=${s}`;
+    }
+
+    if (lang !== undefined) {
+      url += `&lang=${lang}`;
     }
 
     const response = await fetch(url);

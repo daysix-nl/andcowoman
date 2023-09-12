@@ -741,7 +741,7 @@ add_filter('manage_pages_columns', 'verwijder_auteur_kolom');
 
 
 function get_my_products( $request ) {
-
+    global $sitepress;
     $queryParams = $request->get_query_params();
     $paged = isset($queryParams['page']) ? $queryParams['page'] : 1;
     $url = isset($queryParams['full_url']) ? $queryParams['full_url'] : null;
@@ -776,7 +776,9 @@ function get_my_products( $request ) {
     $search = isset($queryParams['s']) ? $queryParams['s'] : null;
     $kleur = isset($queryParams['filter_kleur']) ? $queryParams['filter_kleur'] : null;
     $maat = isset($queryParams['filter_maat']) ? $queryParams['filter_maat'] : null;
-
+    $new_lang = isset($queryParams['lang']) ? $queryParams['lang'] : null;
+    
+    $sitepress->switch_lang($new_lang);
     $args = array(
         'post_type' => 'product',
         'posts_per_page' => 24,
