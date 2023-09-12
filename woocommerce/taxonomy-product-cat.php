@@ -17,7 +17,15 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-get_header( ); ?>
+get_header( ); 
+
+wp_enqueue_script(
+    'my-script',
+    get_template_directory_uri() . '/script/infinity-loading-products.js', // Full path to the script
+    '1.0', 
+    true 
+);
+?>
 <main id="content">
     <style>
     .hhover .showonhover {
@@ -181,7 +189,6 @@ get_header( ); ?>
                             <div class="one"></div>
                             <div class="two"></div>
                             <div class="three"></div>
-                            <div class="four"></div>
 
                     </div>
 

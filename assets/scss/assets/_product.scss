@@ -468,15 +468,15 @@ ol.margin-left-ol {
 }
 
 #loading {
-  width: 250px;
+  width: 200px;
   margin-left: auto;
   margin-right: auto;
   div {
-    width: 18px;
-    height: 18px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     display: inline-block;
-    margin: 8px;
+    margin: 5px;
     animation: loading 2s ease-in-out infinite;
   }
 
@@ -507,8 +507,5 @@ ol.margin-left-ol {
   }
   div:nth-child(3) {
     animation-delay: 0.3s;
-  }
-  div:nth-child(4) {
-    animation-delay: 0.4s;
   }
 }
