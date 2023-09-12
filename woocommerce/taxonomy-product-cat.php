@@ -95,8 +95,8 @@ wp_enqueue_script(
                 if ( is_shop() || is_product_category() ) {                    
                     $args = array(
                         'post_type' => 'product',
-                        'posts_per_page' => 24,
-                        'paged' => 1,
+                        'posts_per_page' => 99,
+                        // 'paged' => 1,
                         'orderby' => 'menu_order',
                         'order' => 'DESC',
                         's' => $search,
@@ -184,13 +184,13 @@ wp_enqueue_script(
                     </div>
                     <?php endwhile;  ?>
 
-                    <div id="products-container" class="row"></div>
+                    <!-- <div id="products-container" class="row"></div>
                     <div id="loading" class="pb-half" style="display: none;">
                             <div class="one"></div>
                             <div class="two"></div>
                             <div class="three"></div>
 
-                    </div>
+                    </div> -->
 
                         <?php
                         
