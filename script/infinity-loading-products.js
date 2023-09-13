@@ -112,7 +112,7 @@ try {
         currentPage++;
         fetchProducts(currentPage, maat, kleur, s, fullUrl);
       }
-    }, 3000);
+    }, 1000);
   };
 
   window.addEventListener("scroll", () => {
