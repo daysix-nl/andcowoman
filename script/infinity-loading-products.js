@@ -53,13 +53,11 @@ try {
 
     if (products.length !== 0) {
       products.forEach((product) => {
-        const productHref =
-          lang !== undefined
-            ? (product.permalink += `?lang=${lang}`)
-            : product.permalink;
+        console.log(product.categories);
+
         let productElement = `                    
                     <div class="col-6 col-lg-4 pb-half ">
-                        <a class="flipsection" href="${productHref}">
+                        <a class="flipsection" href="${product.permalink}">
                             <div class="relative hhover">
                                     <div class="kader-product-img">
                                         <img src="${
