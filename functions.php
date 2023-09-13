@@ -37,6 +37,34 @@ function add_theme_scripts() {
 add_filter( 'use_block_editor_for_post', '__return_false' ); 
 
 
+// only for gravity forms
+function enqueue_custom_scripts_in_footer() {
+    if (is_front_page()) { 
+        echo '<script>
+        document.addEventListener("gform_confirmation_loaded", function(event) {
+            const formId = event.detail.formId;
+            if (formId === 1) {
+                const formWrapper = document.querySelector("#gform_wrapper_" + formId);
+                const confirmationMessage = formWrapper.querySelector(".gform_confirmation_message");
+                const errorMessage = formWrapper.querySelector(".validation_error");
+                let formPosition = 0;
+
+                if (confirmationMessage || errorMessage) {
+                    formPosition = formWrapper.getBoundingClientRect().top + window.pageYOffset + 2000;
+                    window.scrollTo({
+                        top: formPosition,
+                        behavior: "smooth"
+                    });
+                }
+            }
+        });
+        </script>';
+    }
+}
+add_action('wp_footer', 'enqueue_custom_scripts_in_footer');
+
+
+
 // Menu
 
 function day_six_config(){
@@ -882,25 +910,25 @@ add_action( 'rest_api_init', function () {
 
 
 
-function rewrite_image_urls_js() {
-    $current_domain = $_SERVER['HTTP_HOST'];
-    if ( 'andcowoman.local' === $current_domain ) {
-        echo "
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const local_domain = 'http://andcowoman.local'; // Replace with your local domain
-            const production_domain = 'https://andcowoman.com'; // Replace with your production domain
+// function rewrite_image_urls_js() {
+//     $current_domain = $_SERVER['HTTP_HOST'];
+//     if ( 'andcowoman.local' === $current_domain ) {
+//         echo "
+//         <script>
+//         document.addEventListener('DOMContentLoaded', function() {
+//             const local_domain = 'http://andcowoman.local'; // Replace with your local domain
+//             const production_domain = 'https://andcowoman.com'; // Replace with your production domain
 
-            document.querySelectorAll('img').forEach(function(img) {
-                const src = img.getAttribute('src');
-                if (src) {
-                    img.setAttribute('src', src.replace(local_domain, production_domain));
-                }
-            });
-        });
-        </script>
-        ";
-    }
-}
+//             document.querySelectorAll('img').forEach(function(img) {
+//                 const src = img.getAttribute('src');
+//                 if (src) {
+//                     img.setAttribute('src', src.replace(local_domain, production_domain));
+//                 }
+//             });
+//         });
+//         </script>
+//         ";
+//     }
+// }
 
-add_action('wp_footer', 'rewrite_image_urls_js');
+// add_action('wp_footer', 'rewrite_image_urls_js');

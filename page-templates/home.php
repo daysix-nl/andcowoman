@@ -3,14 +3,10 @@
  * Template name: Home
  */
  get_header(); ?>
- <style>
-    /* .licht {
-    text-shadow: #000 0.1em 0.1em 0.2em !important;
-} */
-
-.img-header {
-        object-fit: cover;
-}
+    <style>
+        .img-header {
+                object-fit: cover;
+        }
    </style> 
 <main id="content">
 <!-- Section 1: Header -->
@@ -244,7 +240,7 @@
                             <div class="col-12 text-right pb-blocks ">
                                 <!-- <h3 class="fca">De laatste nieuwtjes in je inbox</h3> -->
                             </div>
-                            <div class="col-12">
+                            <div class="col-12 scroll-margin-form">
                                 <?php echo do_shortcode( '[gravityform id="1" title="false" description="false"]' ); ?>
                             </div>
                     </div>
@@ -301,4 +297,6 @@
     </div>
 </section>
 </main>
+
 <?php get_footer(); ?>
+
