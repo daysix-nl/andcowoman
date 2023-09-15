@@ -1,5 +1,4 @@
 try {
-  console.log("test");
   let params = new URLSearchParams(document.location.search);
   let currentPage = 1;
   let loading = false;
@@ -53,8 +52,6 @@ try {
 
     if (products.length !== 0) {
       products.forEach((product) => {
-        console.log(product.categories);
-
         let productElement = `                    
                     <div class="col-6 col-lg-4 pb-half ">
                         <a class="flipsection" href="${product.permalink}">
