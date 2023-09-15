@@ -78,7 +78,7 @@ wp_enqueue_script(
                 </aside>
                 <?php } ?>
             </div>
-                     <div class="col-12 col-lg-10 p-left">
+            <div class="col-12 col-lg-10 p-left">
                 <div class="row">
                 <?php
 
@@ -129,62 +129,50 @@ wp_enqueue_script(
                     );
                     $loop = new WP_Query($args);
                     
-                    while ( $loop->have_posts() ) : $loop->the_post(); ?>
-                    <!-- Hier kan je HTML plaatsen -->
-                    <div class="col-6 col-lg-4 pb-half ">
-                        <div class="relative hhover">
-                            <a class="flipsection" href="<?php the_permalink(); ?>">
-                                <div class="kader-product-img">
-                                    <?php
-									// Get gallery images IDs
-									if( $gallery_image_ids = get_post_meta( $loop->post->ID, '_product_image_gallery', true ) ) :
-										// Convert a coma separated string of Ids to an array of Ids
-										$gallery_image_ids = explode(',', $gallery_image_ids);
-										// Display the first image (optional)
-										?><img src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>" class="product-img"
-                                        data-id="<?php echo $loop->post->ID; ?>">
-                                    <div class="overlay">
+
+                     while ( $loop->have_posts() ) : $loop->the_post(); ?>
+                        <!-- Start of product -->
+                        <div class="col-6 col-lg-4 pb-half ">
+                            <div class="relative hhover">
+                                <a class="flipsection" href="<?php the_permalink(); ?>">
+                                    <div class="kader-product-img">
                                         <?php
-										// Display the 2nd image (if it exists)
-										if( isset( $gallery_image_ids[1] ) ) :
-											?><img src="<?php echo wp_get_attachment_image_url( $gallery_image_ids[1], 'single-post-thumbnail'); ?>"
-                                            class="product-img" data-id="<?php echo $loop->post->ID; ?>">
-                                        <?php endif; ?>
+                                        if( $gallery_image_ids = get_post_meta( $loop->post->ID, '_product_image_gallery', true ) ) :
+                                            $gallery_image_ids = explode(',', $gallery_image_ids);
+                                        ?>
+                                        <img src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>" class="product-img" data-id="<?php echo $loop->post->ID; ?>">
+                                        <div class="overlay">
+                                            <?php if( isset( $gallery_image_ids[1] ) ) : ?>
+                                            <img src="<?php echo wp_get_attachment_image_url( $gallery_image_ids[1], 'single-post-thumbnail'); ?>" class="product-img" data-id="<?php echo $loop->post->ID; ?>">
+                                            <?php endif; ?>
+                                        </div>
                                         <?php endif; ?>
                                     </div>
-                                </div>
-                                <div class="pt-prod"></div>
-                                <!-- Gerelateerde kleuren -->
-                                
-                                <!-- Einde gerelateerde kleuren                    -->
-                        </div>
-                        <p class="fcc italic catt">
-                            <?php echo wc_get_product_category_list( $product->get_id(), ', ','<span>','</span>' ); ?>
-                        </p>
-                        <h5 class="fwbold fca uppercase">
-                           
-                            <?php   
-                            /*
-                                <? echo $loop->post->post_title; ?>
-                                RJ 08-09-2022, bovenstaande is niet goed en heb ik aangepast. <?= zou kunnen maar dat is shortcode voor <?php echo. Beter gewoon <?php gebruiken. 
-                                Ik heb dit aangepast omdat ik wilde controleren of alles goed ging en zag dat bij de shop archive de titels op 'POST->POST->TITLE?>' stonden
-                            */
-                            ?>
-                             <?php echo $loop->post->post_title; ?>
-                        </h5>
-                        <div class="btn-flip">
-                            <div class="message2"> <?php if ( $price_html = $product->get_price_html() ) : ?>
-                                <span class="price">
-                                    <p class="fbody large regular fca"><?php echo $price_html; ?></p>
-                                </span>
-                                <?php endif; ?>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-                    <?php endwhile;  ?>
+                                    <div class="pt-prod"></div>
+                                    <p class="fcc italic catt">
+                                        <?php echo wc_get_product_category_list( $product->get_id(), ', ','<span>','</span>' ); ?>
+                                    </p>
+                                    <h5 class="fwbold fca uppercase">
+                                        <?php echo $loop->post->post_title; ?>
+                                    </h5>
+                                    <div class="btn-flip">
+                                        <div class="message2"> 
+                                            <?php if ( $price_html = $product->get_price_html() ) : ?>
+                                            <span class="price">
+                                                <p class="fbody large regular fca"><?php echo $price_html; ?></p>
+                                            </span>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+                                </a> <!-- This closes the flipsection link -->
+                            </div> <!-- This closes the relative hhover div -->
+                        </div> <!-- This closes the column div -->
+                        <!-- End of product -->
+                    <?php endwhile; ?>
 
-                    <div id="products-container" class="row"></div>
+                    <div class="col-12">
+                        <div id="products-container" class="row"></div>
+                    </div>
                     <div id="loading" class="pb-half" style="display: none;">
                             <div class="one"></div>
                             <div class="two"></div>
@@ -199,7 +187,6 @@ wp_enqueue_script(
                         woocommerce_content();
                     }
                     ?>
-
                 </div>
             </div>
             <button onclick="openFilter()" class="slidefloatingbutton d-block d-lg-none">Filter</button>

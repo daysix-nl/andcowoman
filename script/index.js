@@ -54,22 +54,22 @@ try {
   smoothScroll.init();
 } catch (error) {}
 
-try {
-  var button = document.querySelector(".balk-icon");
-  var elementBalk = document.querySelector(".balk");
-  var elementNone = document.querySelector(".header-add");
-  var elementTop = document.querySelector(".header-top");
-  var elementCart = document.querySelector(".cart-add");
-  var elementMain = document.querySelector("main");
+// try {
+//   var button = document.querySelector(".balk-icon");
+//   var elementBalk = document.querySelector(".balk");
+//   var elementNone = document.querySelector(".header-add");
+//   var elementTop = document.querySelector(".header-top");
+//   var elementCart = document.querySelector(".cart-add");
+//   var elementMain = document.querySelector("main");
 
-  button.addEventListener("click", function () {
-    elementBalk.classList.toggle("balk-big");
-    elementNone.classList.toggle("none");
-    elementTop.classList.toggle("none-fixed");
-    elementCart.classList.toggle("none");
-    elementMain.classList.toggle("overlay-grey");
-  });
-} catch (error) {}
+//   button.addEventListener("click", function () {
+//     elementBalk.classList.toggle("balk-big");
+//     elementNone.classList.toggle("none");
+//     elementTop.classList.toggle("none-fixed");
+//     elementCart.classList.toggle("none");
+//     elementMain.classList.toggle("overlay-grey");
+//   });
+// } catch (error) {}
 
 try {
   var swiper = new Swiper(".mySwiper-nieuwe-collectie", {
