@@ -19,7 +19,7 @@
                         <div class="carousel-item active relative" data-bs-interval="5000">
                         <!-- <div style="background-image: url('<?php the_field('home_section_1_slide_1_afbeelding');?>');" class="d-block w-100 img-header"></div> -->
                         <video autoplay="" loop="" muted="" playsinline="" class="d-block img-header min-h-[400px] md:min-h-[560px]">
-                            <source src="https://andcowoman.com/video/andco-2.mp4">
+                            <source src="https://andcowoman.com/wp-content/uploads/2024/01/springsummer1-24.mp4">
                         </video>
                         <div class="carousel-caption caption-delay z-[2]" >
                             <h2 class="pb-blocks <?php the_field('home_section_1_slide_1_kleur');?> text-38 leading-38 md:text-50 md:leading-50"><?php the_field('home_section_1_slide_1_titel');?></h2>
@@ -93,7 +93,7 @@
                             'meta_query' => array(
                                 array(
                                     'key' => '_sku', // The meta key to query. In this case, it's '_sku' which is the SKU of the product.
-                                    'value' => array('2564-167', '2585-172', '2578-170'), // An array of SKUs
+                                    'value' => array('2682-201', '2654-208', '2667-209'), // An array of SKUs
                                     'compare' => 'IN', // Compares if the SKU is in the array
                                 ),
                             )
