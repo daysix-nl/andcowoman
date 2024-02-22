@@ -3,94 +3,142 @@
  * Template name: About 2.0
  */
  get_header(); ?>
+ <?php
+$image = get_field('about_2_section_1_afbeelding_1');
+$image_url = isset($image['url']) ? esc_url($image['url']) : '';
+$image_alt = isset($image['alt']) ? esc_attr($image['alt']) : '';
+?>
+<?php
+$image2 = get_field('about_2_section_1_afbeelding_2');
+$image2_url = isset($image2['url']) ? esc_url($image2['url']) : '';
+$image2_alt = isset($image2['alt']) ? esc_attr($image2['alt']) : '';
+?>
+<?php
+$image3 = get_field('about_2_section_2_afbeelding_1');
+$image3_url = isset($image3['url']) ? esc_url($image3['url']) : '';
+$image3_alt = isset($image3['alt']) ? esc_attr($image3['alt']) : '';
+?>
+<?php
+$image4 = get_field('about_2_section_3_afbeelding_1');
+$image4_url = isset($image4['url']) ? esc_url($image4['url']) : '';
+$image4_alt = isset($image4['alt']) ? esc_attr($image4['alt']) : '';
+?>
+<?php
+$image5 = get_field('about_2_section_4_afbeelding_1');
+$image5_url = isset($image5['url']) ? esc_url($image5['url']) : '';
+$image5_alt = isset($image5['alt']) ? esc_attr($image5['alt']) : '';
+?>
+<?php
+$image6 = get_field('about_2_section_4_afbeelding_2');
+$image6_url = isset($image6['url']) ? esc_url($image6['url']) : '';
+$image6_alt = isset($image6['alt']) ? esc_attr($image6['alt']) : '';
+?>
+<?php
+$image7 = get_field('about_2_section_5_afbeelding_1');
+$image7_url = isset($image7['url']) ? esc_url($image7['url']) : '';
+$image7_alt = isset($image7['alt']) ? esc_attr($image7['alt']) : '';
+?>
+<?php
+$image8 = get_field('about_2_section_5_afbeelding_2');
+$image8_url = isset($image8['url']) ? esc_url($image8['url']) : '';
+$image8_alt = isset($image8['alt']) ? esc_attr($image8['alt']) : '';
+?>
 
 <main id="content">
-    <!-- HEADER -->
+    <!-- SECTION 1 -->
     <section>
         <div class="w-full max-w-[390px] px-[15px] lg:max-w-[1200px] lg:px-[73px] mx-auto flex flex-col md:flex-row justify-between items-center">
             <div class="w-full md:max-w-[480px] pr-[30px]">
-                <h1 class="text-38 font-bold">About &Co Woman</h1>
-                <p class="">Wat we doen, doen we al jaren met veel passie. Door onze aderen stroomt fashion-bloed en ons DNA wordt gekenmerkt door gezond verstand en Hollandse nuchterheid.</p>
+                <h1 class="text-30 md:text-38 font-bold"><?php the_field('about_2_section_1_titel');?></h1>
+                <p><?php the_field('about_2_section_1_tekst');?></p>
             </div>
-            <div class="w-full md:max-w-[500px] h-[480px] relative">
-                <div class="absolute w-[280px] h-[420px] bg-black right-0 top-0 overflow-hidden">
-                    <img src="/wp-content/themes/andcowoman/img/test-about-2.png" alt="" class="min-h-full min-w-full object-cover object-center">
+            <div class="w-full max-w-[333px] md:max-w-[500px] h-[318px] md:h-[480px] relative mt-[50px] md:mt-[unset]">
+                <div class="absolute w-[186px] h-[278px] md:w-[280px] md:h-[420px] bg-black right-0 top-0 overflow-hidden">
+                    <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>" class="min-h-full min-w-full object-cover object-center">
                 </div>
-                <div class="absolute w-[280px] h-[420px] bg-black left-0 bottom-0 overflow-hidden">
-                    <img src="/wp-content/themes/andcowoman/img/test-about-1.png" alt="" class="min-h-full min-w-full object-cover object-center">
+                <div class="absolute w-[186px] h-[278px] md:w-[280px] md:h-[420px] bg-black left-0 bottom-0 overflow-hidden">
+                    <img src="<?php echo $image2_url; ?>" alt="<?php echo $image2_alt; ?>" class="min-h-full min-w-full object-cover object-center">
                 </div>
             </div>
         </div>
    </section>
-
+    <!-- SECTION 2 -->
     <section>
-        <div class="w-full max-w-[390px] px-[15px] lg:max-w-[1200px] lg:px-[73px] mx-auto flex flex-col md:flex-row justify-between items-center mt-[75px]">
-            <div class="w-full md:max-w-[480px] pr-[40px]">
-                <div class="aspect-[13/16] overflow-hidden">
-                    <img src="/wp-content/themes/andcowoman/img/test-about-3.png" alt="" class="min-h-full min-w-full object-cover object-center">
-                </div>
+        <div class="w-full max-w-[390px] px-[15px] lg:max-w-[1200px] lg:px-[73px] mx-auto flex flex-col md:flex-row justify-between items-center mt-[50px] md:mt-[75px]">
+             <div class="w-full md:max-w-[500px] md:order-2">
+                <h2 class="text-25 leading-35"><?php the_field('about_2_section_2_titel_1');?></h2>
+                <p><?php the_field('about_2_section_2_tekst_1');?></p>
+                <h2 class="text-25 leading-35 mt-[35px]"><?php the_field('about_2_section_2_titel_2');?></h2>
+                <p><?php the_field('about_2_section_2_tekst_2');?></p>
             </div>
-            <div class="w-full md:max-w-[500px]">
-                <h2 class="text-25">Ontwikkeld in Nederland</h2>
-                <p>Het ontwikkelen van de collectie gebeurt in Nederland. Het design, het kleurpalet, maar ook de patronen worden in Nederland gemaakt! Hierdoor is onze maatvoering erg stabiel en aangepast aan de Noord Europese pasvorm. </p>
-                <h2 class="text-25 mt-[35px]">Comfort</h2>
-                <p>Bij &Co vinden we comfort erg belangrijk. Bij het ontwerpen van onze kleding wordt comfort altijd in overweging genomen. We kiezen graag voor materialen met stretch.</p>
+            <div class="w-full max-w-[270px] md:max-w-[480px] md:pr-[40px]  md:order-1 mt-[50px] md:mt-[unset] ml-auto mr-auto md:ml-[unset] md:mr-[unset]">
+                <div class="aspect-[13/16] overflow-hidden">
+                    <img src="<?php echo $image3_url; ?>" alt="<?php echo $image3_alt; ?>" class="min-h-full min-w-full object-cover object-center">
+                </div>
             </div>
         </div>
    </section>
-
+    <!-- SECTION 3 -->
    <section>
         <div class="w-full max-w-[390px] px-[15px] lg:max-w-[1200px] lg:px-[73px] mx-auto flex flex-col md:flex-row justify-between items-center mt-[40px]">
-            <div class="w-full md:max-w-[480px] pr-[40px]">
-                <h2 class="text-25">Eigen inkoop </h2>
-                <p>We kopen zelf onze stoffen en garens in, rechtstreeks bij een vast aantal zorgvuldig geselecteerde leveranciers in Europa en Turkije. Dit geeft ons een grote controle op de kwaliteit en herkomst.<br><br>Halfjaarlijks bezoeken wij onze stofleveranciers om in samenwerking nieuwe stoffen en prints te ontwikkeling met focus op comfort en design.  Deze stoffen zijn daarmee dus ook vaak uniek en exclusief voor ons ontwikkeld. </p>
+            <div class="w-full md:max-w-[480px] md:pr-[40px]">
+                <h2 class="text-25 leading-35"><?php the_field('about_2_section_3_titel_1');?></h2>
+                <p><?php the_field('about_2_section_3_tekst_1');?></p>
             </div>
-            <div class="w-full md:max-w-[500px]">
+            <div class="w-full max-w-[270px] md:max-w-[500px] mt-[50px] md:mt-[unset] ml-auto mr-auto md:ml-[unset] md:mr-[unset]">
                  <div class="aspect-[13/16] overflow-hidden">
-                    <img src="/wp-content/themes/andcowoman/img/test-about-4.png" alt="" class="min-h-full min-w-full object-cover object-center">
+                    <img src="<?php echo $image4_url; ?>" alt="<?php echo $image4_alt; ?>" class="min-h-full min-w-full object-cover object-center">
                 </div>
             </div>
         </div>
    </section>
-
-   <section class="bg-[#FBF8F3] mt-[80px]">
-        <div class="w-full max-w-[390px] px-[15px] lg:max-w-[1200px] lg:px-[73px] mx-auto flex flex-col md:flex-row justify-between items-center py-[80px]">
-            <div class="w-full md:max-w-[480px] pr-[40px]">
+    <!-- SECTION 4 -->
+   <section class="bg-[#FBF8F3] mt-[50px] md:mt-[80px]">
+        <div class="w-full max-w-[390px] px-[15px] lg:max-w-[1200px] lg:px-[73px] mx-auto flex flex-col md:flex-row justify-between items-center py-[40px] md:py-[80px]">
+            <div class="w-full md:max-w-[480px] pr-[40px] hidden md:block">
                 <div class="h-[814px] relative">
                      <div class="absolute w-[360px] h-[430px] bg-black left-0 top-0 overflow-hidden">
-                        <img src="/wp-content/themes/andcowoman/img/test-about-5.png" alt="" class="min-h-full min-w-full object-cover object-center">
+                        <img src="<?php echo $image5_url; ?>" alt="<?php echo $image5_alt; ?>" class="min-h-full min-w-full object-cover object-center">
                     </div>
                     <div class="absolute w-[360px] h-[430px] bg-black right-0 bottom-0 overflow-hidden">
-                        <img src="/wp-content/themes/andcowoman/img/test-about-6.png" alt="" class="min-h-full min-w-full object-cover object-center">
+                        <img src="<?php echo $image6_url; ?>" alt="<?php echo $image6_alt; ?>" class="min-h-full min-w-full object-cover object-center">
                     </div>
                 </div>
-               
             </div>
             <div class="w-full md:max-w-[500px]">
-                <h2 class="text-25">Geproduceerd in Europa en Turkije</h2>
-                <p>95% van onze productie vindt plaats in Europa en Turkije, dus dichtbij huis. Dit scheelt veel tijd en minimaliseert transport.<br><br>We hebben een beperkt aantal producenten waarmee we samenwerken, waarvan sommigen al meer dan 20 jaar onze partners zijn. We betalen een eerlijke prijs voor onze items zodat we goede arbeidsomstandigheden kunnen garanderen. Dagelijks hebben we contact en we bezoeken onze producenten ook zeer regelmatig om een vinger aan de pols te houden. <br><br>In samenwerking met deze producenten ondernemen we daarnaast initiatieven om de productieprocessen efficiënter en duurzamer te maken. Hierbij richten we ons bijvoorbeeld op het verminderen van afval, water- en energieverbruik.</p>
-                <h2 class="text-25 mt-[35px]">We produceren niet meer dan nodig</h2>
-                <p>Omdat we grotendeels produceren op basis van verkooporders, blijven onze voorraden beperkt. We hebben hierdoor nauwelijks tot geen overproductie.</p>
+                <h2 class="text-25 leading-35 max-w-[270px]"><?php the_field('about_2_section_4_titel_1');?></h2>
+                <p><?php the_field('about_2_section_4_tekst_1');?></p>
+                <div class="w-full max-w-[333px] mx-auto md:hidden mt-[50px]">
+                    <div class="h-[541px] relative">
+                        <div class="absolute w-[239px] h-[288px] bg-black left-0 top-0 overflow-hidden">
+                            <img src="<?php echo $image5_url; ?>" alt="<?php echo $image5_alt; ?>" class="min-h-full min-w-full object-cover object-center">
+                        </div>
+                        <div class="absolute w-[239px] h-[288px] bg-black right-0 bottom-0 overflow-hidden">
+                            <img src="<?php echo $image6_url; ?>" alt="<?php echo $image6_alt; ?>" class="min-h-full min-w-full object-cover object-center">
+                        </div>
+                    </div>
+                </div>
+                <h2 class="text-25 leading-35 mt-[40px] md:mt-[35px] max-w-[270px]"><?php the_field('about_2_section_4_titel_2');?></h2>
+                <p class="mb-[10px] md:mb-[unset]"><?php the_field('about_2_section_4_tekst_2');?></p>
             </div>
         </div>
    </section>
-
-
+    <!-- SECTION 5 -->
      <section>
-        <div class="w-full max-w-[390px] px-[15px] lg:max-w-[1200px] lg:px-[73px] mx-auto flex flex-col md:flex-row justify-between items-start my-[80px]">
-            <div class="w-full md:max-w-[480px] pr-[40px]">
-                <div class="w-[280px] h-[420px] bg-black right-0 top-0 overflow-hidden">
-                    <img src="/wp-content/themes/andcowoman/img/test-about-7.png" alt="" class="min-h-full min-w-full object-cover object-center">
+        <div class="w-full max-w-[390px] px-[15px] lg:max-w-[1200px] lg:px-[73px] mx-auto flex flex-col md:flex-row justify-between items-start my-[50px] md:my-[80px]">
+            <div class="w-full md:max-w-[480px] md:pr-[40px]">
+                <div class="w-[270px] h-[408px] ml-auto mr-auto md:ml-[unset] md:mr-[unset] md:w-[280px] md:h-[420px] bg-black right-0 top-0 overflow-hidden">
+                    <img src="<?php echo $image7_url; ?>" alt="<?php echo $image7_alt; ?>" class="min-h-full min-w-full object-cover object-center">
                 </div>
-                <h2 class="mt-[10px] text-25">Onze TRAVEL</h2>
-                <p class="max-w-[390px] mt-[0px]">We staan bekend om onze Travel collectie. Onze TRVL stof droogt snel en is kreukvrij, waardoor TRVL items niet in de droger of gestreken hoeven te worden, wel zo snel, makkelijk en goed voor het milieu! En het mag dan wel van een synthetische stof gemaakt zijn, de stof wordt niet statisch, het pluist niet en het ademt! Deze TRVL stof is daarnaast ook erg slijtvast, waardoor je het jarenlang kunt dragen. </p>
+                <h2 class="mt-[40px] md:mt-[10px] text-25"><?php the_field('about_2_section_5_titel_1');?></h2>
+                <p class="max-w-[390px] mt-[0px]"><?php the_field('about_2_section_5_tekst_1');?></p>
             </div>
-            <div class="w-full md:max-w-[500px]">
-                <div class="w-[280px] h-[420px] bg-black right-0 top-0 overflow-hidden">
-                    <img src="/wp-content/themes/andcowoman/img/test-about-8.png" alt="" class="min-h-full min-w-full object-cover object-center">
+            <div class="w-full md:max-w-[500px] mt-[50px] md:mt-[unset]">
+                <div class="w-[270px] h-[408px] ml-auto mr-auto md:ml-[unset] md:mr-[unset] md:w-[280px] md:h-[420px]] bg-black right-0 top-0 overflow-hidden">
+                    <img src="<?php echo $image8_url; ?>" alt="<?php echo $image8_alt; ?>" class="min-h-full min-w-full object-cover object-center">
                 </div>
-                <h2 class="mt-[10px] text-25">Onze basic collectie</h2>
-                <p class="max-w-[390px] mt-[0px]">Ook hebben we een grote travel NOOS collectie in basis kleuren die het hele jaar door besteld kan worden. Deze collectie bestaat uit tijdloze classics die niet seizoensgebonden zijn. Wist je dat sommige van onze basic items al meer dan vijf jaar beschikbaar zijn, zonder dat ze in de uitverkoop zijn geweest, en nog steeds helemaal in de mode zijn?</p>
+                <h2 class="mt-[40px] md:mt-[10px] text-25"><?php the_field('about_2_section_5_titel_2');?></h2>
+                <p class="max-w-[390px] mt-[0px]"><?php the_field('about_2_section_5_tekst_2');?></p>
             </div>
         </div>
    </section>
