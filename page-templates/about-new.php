@@ -134,7 +134,7 @@ $image8_alt = isset($image8['alt']) ? esc_attr($image8['alt']) : '';
                 <p class="max-w-[390px] mt-[0px]"><?php the_field('about_2_section_5_tekst_1');?></p>
             </div>
             <div class="w-full md:max-w-[500px] mt-[50px] md:mt-[unset]">
-                <div class="w-[270px] h-[408px] ml-auto mr-auto md:ml-[unset] md:mr-[unset] md:w-[280px] md:h-[420px]] bg-black right-0 top-0 overflow-hidden">
+                <div class="w-[270px] h-[408px] ml-auto mr-auto md:ml-[unset] md:mr-[unset] md:w-[280px] md:h-[420px] bg-black right-0 top-0 overflow-hidden">
                     <img src="<?php echo $image8_url; ?>" alt="<?php echo $image8_alt; ?>" class="min-h-full min-w-full object-cover object-center">
                 </div>
                 <h2 class="mt-[40px] md:mt-[10px] text-25"><?php the_field('about_2_section_5_titel_2');?></h2>
