@@ -375,7 +375,6 @@ if ( post_password_required() ) {
                                     <div class="aspect-[12/16] w-full overflow-hidden mb-[8px]">
                                         <img src="<?php echo get_the_post_thumbnail_url();?>" alt="" class="h-full min-h-full min-w-full object-cover object-center">
                                     </div>
-                                    <p class="fwbold fca uppercase"><?php the_title();?></p>
                                 </a>
                             </div>
                             <?php endwhile; wp_reset_query(); ?>
