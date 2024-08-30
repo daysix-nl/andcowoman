@@ -16,9 +16,8 @@ get_header(); ?>
         <img src="<?php echo get_the_post_thumbnail_url();?>" alt="" class="h-full min-h-full min-w-full object-cover object-center">
     </div>
     <div class="lg:pl-[90px] xl:pl-[100px] mt-[30px] lg:mt-[unset]">
-        <p class="uppercase bred-size"> <a class=" hover-bred uppercase" href="/">Home</a>  | <span>Shop the look</span>  | <span class="fwbold uppercase"><?php the_title();?></span></p>
+        <p class="uppercase bred-size"> <a class=" hover-bred uppercase" href="/">Home</a>  | <span>Shop the look</span> </p>
         <div class="pt-text d-block d-lg-none"></div>
-        <h1 class="product_title entry-title"><?php the_title();?></h1>
         <div class="grid grid-cols-2 gap-[10px] mt-[30px]">
             <?php
                 if (have_rows('producten')) :
@@ -136,7 +135,6 @@ get_header(); ?>
                                     <div class="aspect-[12/16] w-full overflow-hidden mb-[8px]">
                                         <img src="<?php echo get_the_post_thumbnail_url();?>" alt="" class="h-full min-h-full min-w-full object-cover object-center">
                                     </div>
-                                    <p class="fwbold fca uppercase"><?php the_title();?></p>
                                 </a>
                             </div>
                             <?php endwhile; wp_reset_query(); ?>
