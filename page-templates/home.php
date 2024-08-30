@@ -6,7 +6,33 @@
     <style>
         .img-header {
                 object-fit: cover;
-        }
+		}
+		.scale-shadow {
+background: rgb(215,220,222);
+background: -moz-linear-gradient(96deg, rgba(215,220,222,0) 0%, rgba(0,0,0,0.3155856092436975) 100%);
+background: -webkit-linear-gradient(96deg, rgba(215,220,222,0) 0%, rgba(0,0,0,0.3155856092436975) 100%);
+background: linear-gradient(96deg, rgba(215,220,222,0) 0%, rgba(0,0,0,0.3155856092436975) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d7dcde",endColorstr="#000000",GradientType=1);
+		}
+		.carousel-caption {
+			position: absolute;
+    top: 1.25rem;
+    left: unset;
+    right: 5%;
+    padding-top: 5%;
+    padding-bottom: 1.25rem;
+    text-align: unset;
+    bottom: unset;
+    color: #000;
+			
+			    display: grid;
+    justify-items: end;
+		}
+		
+		.carousel-caption h2, .carousel-caption h3 {
+			text-align: right !important;
+		}
+	
    </style> 
 <main id="content">
 <!-- Section 1: Header -->
@@ -17,16 +43,16 @@
                 <div id="carouselExampleCaptions" class="carousel carousel-fade slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active relative" data-bs-interval="5000">
-                        <!-- <div style="background-image: url('<?php the_field('home_section_1_slide_1_afbeelding');?>');" class="d-block w-100 img-header"></div> -->
+<!--                         <div style="background-image: url('<?php the_field('home_section_1_slide_1_afbeelding');?>');" class="d-block w-100 img-header"></div> -->
                         <video autoplay="" loop="" muted="" playsinline="" class="d-block img-header min-h-[400px] md:min-h-[560px]">
-                            <source src="https://andcowoman.com/wp-content/uploads/2024/01/springsummer1-24.mp4">
+                            <source src="https://andcowoman.com/wp-content/uploads/2024/08/winter-1-24-1.mp4">
                         </video>
                         <div class="carousel-caption caption-delay z-[2]" >
                             <h2 class="pb-blocks <?php the_field('home_section_1_slide_1_kleur');?> text-38 leading-38 md:text-50 md:leading-50"><?php the_field('home_section_1_slide_1_titel');?></h2>
                             <h3 class="<?php the_field('home_section_1_slide_1_kleur');?> text-28 leading-28 md:text-30 md:leading-30"><?php the_field('home_section_1_slide_1_tekst');?></h3>
                             <a href="<?php the_field('home_section_1_slide_1_cta_link');?>"><button class="bg-white h-[40px] w-[120px] flex items-center justify-center mt-4 hover:opacity-80 duration-300"><span class="uppercase font-bold text-14"><?php the_field('home_section_1_slide_1_cta_tekst');?></span></button></a>
                         </div>
-                        <div class="absolute w-[50%] h-full top-0 left-0 bottom-0 bg-gradient-to-r from-[#00000075] to-[transparent] z-[1]"></div>
+                        <div class="absolute w-[50%] h-full top-0 right-0 bottom-0 bg-gradient-to-r from-[transparent] to-[0001] z-[1] scale-shadow"></div>
                         <!-- </div>
                         <div class="carousel-item" data-bs-interval="5000">
                         <div style="background-image: url('<?php the_field('home_section_1_slide_2_afbeelding');?>');" class="d-block w-100 img-header"></div>
@@ -93,7 +119,7 @@
                             'meta_query' => array(
                                 array(
                                     'key' => '_sku', // The meta key to query. In this case, it's '_sku' which is the SKU of the product.
-                                    'value' => array('2682-201', '2654-208', '2667-209'), // An array of SKUs
+                                    'value' => array('2823-285', '2851-284', '2842-285'), // An array of SKUs
                                     'compare' => 'IN', // Compares if the SKU is in the array
                                 ),
                             )
