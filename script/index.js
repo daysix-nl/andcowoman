@@ -11,7 +11,7 @@ try {
       $("#navv").addClass("bgd");
     }
   });
-} catch (error) {}
+} catch (error) { }
 
 try {
   $(window).scroll(function () {
@@ -23,7 +23,7 @@ try {
       $(".wrap img").removeClass("hideicon");
     }
   });
-} catch (error) {}
+} catch (error) { }
 
 // Navbar resize on scroll
 
@@ -39,7 +39,7 @@ try {
       }
     });
   });
-} catch (error) {}
+} catch (error) { }
 
 try {
   const actualBtn = document.getElementById("input_1_6");
@@ -49,10 +49,10 @@ try {
   actualBtn.addEventListener("change", function () {
     fileChosen.textContent = this.files[0].name;
   });
-} catch (error) {}
+} catch (error) { }
 try {
   smoothScroll.init();
-} catch (error) {}
+} catch (error) { }
 
 // try {
 //   var button = document.querySelector(".balk-icon");
@@ -87,4 +87,24 @@ try {
       },
     },
   });
-} catch (error) {}
+} catch (error) { }
+
+
+
+try {
+  var swiper = new Swiper(".mySwiper-look", {
+    loop: true,
+    slidesPerView: 1.7,
+    spaceBetween: 20,
+    breakpoints: {
+      700: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    },
+  });
+} catch (error) { }
