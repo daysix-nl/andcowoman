@@ -63,7 +63,7 @@
                             title="<?php _e('Login / Register','woocommerce'); ?>">
                             <u><?php _e('Login','woocommerce'); ?></u></a>
                         <?php } ?>
-                        <a href="https://outlet.andcowoman.com" class="ml-[30px] bg-[#ff313b] px-[12px] py-[3px] text-white rounded-[2px] font-semibold text-[10px] hover:bg-[#ff313b]">Outlet</a>
+                        <a href="https://outlet.andcowoman.com" class="ml-[30px] bg-[#ff313b] px-[12px] py-[3px] text-white rounded-[2px] font-semibold text-[10px] hover:bg-[#ff313b]" target="_blank">Outlet</a>
                         <div class="border-header-top"></div>
                         <div class="social-header">
                             <?php do_action('wpml_add_language_selector'); ?>
