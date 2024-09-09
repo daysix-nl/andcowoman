@@ -42,6 +42,7 @@
     </script>
 	<meta name="facebook-domain-verification" content="m7skaohuzp5mepfy0obeafasgfk0qh" />
 	<meta name="google-site-verification" content="ShqwiyyPJI4yx3rPkbMw5oCletxc7KMbsVd-EvSBSM0" />
+    <meta name="p:domain_verify" content="187448e1076761a06e268bc280ac1932"/>
     <title><?php bloginfo( 'name' ); ?> <?php wp_title(); ?></title>
     <?php wp_head(); ?>
 </head>
