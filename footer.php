@@ -176,46 +176,8 @@
         </section>
    </div>
 </footer>
-<style>
-/* COOKIE POPUP STYLES */
-.menu-footer-text {
-    color: rgba(255, 255, 255, 0.6) !important;
-    font-size: 9px !important;
-}
-</style>
-<script>
-/* common fuctions */
-function el(selector) {
-    return document.querySelector(selector)
-}
-function els(selector) {
-    return document.querySelectorAll(selector)
-}
-function on(selector, event, action) {
-    els(selector).forEach(e => e.addEventListener(event, action))
-}
-function cookie(name) {
-    let c = document.cookie.split('; ').find(cookie => cookie && cookie.startsWith(name + '='))
-    return c ? c.split('=')[1] : false;
-}
-/* popup button hanler */
-on('.cookie-popup button', 'click', () => {
-    el('.cookie-popup').classList.add('cookie-popup--accepted');
-    document.cookie = `cookie-accepted=true`
-});
-/* popup init hanler */
-if (cookie('cookie-accepted') !== "true") {
-    el('.cookie-popup').classList.add('cookie-popup--not-accepted');
-}
-/* page buttons handlers */
-function _reset() {
-    document.cookie = 'cookie-accepted=false';
-    document.location.reload();
-}
-function _switchMode(cssClass) {
-    el('.cookie-popup').classList.toggle(cssClass);
-}
-</script>
+
+
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
