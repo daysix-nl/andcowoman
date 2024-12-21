@@ -85,17 +85,17 @@ get_header(); ?>
                                     <?php
                                 }
                             } else {
-                                echo '<p>Geen producten gevonden.</p>';
+                                
                             }
 
                             // Reset post data
                             wp_reset_postdata();
                         } else {
-                            echo '<p>Ongeldig product ID.</p>';
+                           
                         }
                     endwhile;
                 else :
-                    echo '<p>Geen producten beschikbaar.</p>';
+                   
                 endif;
                 ?>
 
