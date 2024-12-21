@@ -45,7 +45,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d7dcde",endCo
                         <div class="carousel-item active relative" data-bs-interval="5000">
 <!--                         <div style="background-image: url('<?php the_field('home_section_1_slide_1_afbeelding');?>');" class="d-block w-100 img-header"></div> -->
                         <video autoplay="" loop="" muted="" playsinline="" class="d-block img-header min-h-[400px] md:min-h-[560px]">
-                            <source src="https://andcowoman.com/wp-content/uploads/2024/08/winter-1-24-1.mp4">
+                            <source src="https://andcowoman.com/wp-content/uploads/2024/10/sw-241.mp4">
                         </video>
                         <div class="carousel-caption caption-delay z-[2]" >
                             <h2 class="pb-blocks <?php the_field('home_section_1_slide_1_kleur');?> text-38 leading-38 md:text-50 md:leading-50"><?php the_field('home_section_1_slide_1_titel');?></h2>
@@ -119,7 +119,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d7dcde",endCo
                             'meta_query' => array(
                                 array(
                                     'key' => '_sku', // The meta key to query. In this case, it's '_sku' which is the SKU of the product.
-                                    'value' => array('2823-285', '2851-284', '2842-285'), // An array of SKUs
+                                    'value' => array('2910-300', '2900-294', '2880-300'), // An array of SKUs
                                     'compare' => 'IN', // Compares if the SKU is in the array
                                 ),
                             )
