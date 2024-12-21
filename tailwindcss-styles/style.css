@@ -623,6 +623,9 @@ video {
 .h-\[18px\] {
   height: 18px;
 }
+.h-\[23px\] {
+  height: 23px;
+}
 .h-\[278px\] {
   height: 278px;
 }
@@ -674,6 +677,9 @@ video {
 .w-\[270px\] {
   width: 270px;
 }
+.w-\[36\.64px\] {
+  width: 36.64px;
+}
 .w-\[360px\] {
   width: 360px;
 }
@@ -682,6 +688,9 @@ video {
 }
 .w-\[90px\] {
   width: 90px;
+}
+.w-auto {
+  width: auto;
 }
 .w-fit {
   width: -moz-fit-content;
@@ -699,14 +708,14 @@ video {
 .max-w-\[270px\] {
   max-width: 270px;
 }
+.max-w-\[295px\] {
+  max-width: 295px;
+}
 .max-w-\[300px\] {
   max-width: 300px;
 }
 .max-w-\[333px\] {
   max-width: 333px;
-}
-.max-w-\[380px\] {
-  max-width: 380px;
 }
 .max-w-\[390px\] {
   max-width: 390px;
@@ -725,9 +734,6 @@ video {
 }
 .grid-cols-4 {
   grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-.grid-cols-5 {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 .flex-row {
   flex-direction: row;
@@ -756,9 +762,6 @@ video {
 .gap-\[10px\] {
   gap: 10px;
 }
-.gap-\[15px\] {
-  gap: 15px;
-}
 .space-x-\[13px\] > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(13px * var(--tw-space-x-reverse));
@@ -774,6 +777,16 @@ video {
 }
 .rounded-\[2px\] {
   border-radius: 2px;
+}
+.rounded-\[4px\] {
+  border-radius: 4px;
+}
+.border-\[1px\] {
+  border-width: 1px;
+}
+.border-\[\#EDEDED\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(237 237 237 / var(--tw-border-opacity));
 }
 .bg-\[\#000000\] {
   --tw-bg-opacity: 1;
@@ -791,9 +804,9 @@ video {
   --tw-bg-opacity: 1;
   background-color: rgb(255 49 59 / var(--tw-bg-opacity));
 }
-.bg-black {
+.bg-\[\#fff\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(59 65 91 / var(--tw-bg-opacity));
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 .bg-white {
   --tw-bg-opacity: 1;
@@ -1054,6 +1067,10 @@ video {
     width: 280px;
   }
 
+  .md\:max-w-\[295px\] {
+    max-width: 295px;
+  }
+
   .md\:max-w-\[480px\] {
     max-width: 480px;
   }
@@ -1142,6 +1159,10 @@ video {
   }
 }
 @media (min-width: 1680px) {
+
+  .xl\:max-w-\[295px\] {
+    max-width: 295px;
+  }
 
   .xl\:px-\[85px\] {
     padding-left: 85px;

@@ -53,10 +53,10 @@ $image8_alt = isset($image8['alt']) ? esc_attr($image8['alt']) : '';
                 <p><?php the_field('about_2_section_1_tekst');?></p>
             </div>
             <div class="w-full max-w-[333px] md:max-w-[500px] h-[318px] md:h-[480px] relative mt-[50px] md:mt-[unset]">
-                <div class="absolute w-[186px] h-[278px] md:w-[280px] md:h-[420px] bg-black right-0 top-0 overflow-hidden">
+                <div class="absolute w-[186px] h-[278px] md:w-[280px] md:h-[420px]  right-0 top-0 overflow-hidden">
                     <img src="<?php echo $image_url; ?>" alt="<?php echo $image_alt; ?>" class="min-h-full min-w-full object-cover object-center">
                 </div>
-                <div class="absolute w-[186px] h-[278px] md:w-[280px] md:h-[420px] bg-black left-0 bottom-0 overflow-hidden">
+                <div class="absolute w-[186px] h-[278px] md:w-[280px] md:h-[420px]  left-0 bottom-0 overflow-hidden">
                     <img src="<?php echo $image2_url; ?>" alt="<?php echo $image2_alt; ?>" class="min-h-full min-w-full object-cover object-center">
                 </div>
             </div>
@@ -97,10 +97,10 @@ $image8_alt = isset($image8['alt']) ? esc_attr($image8['alt']) : '';
         <div class="w-full max-w-[390px] px-[15px] lg:max-w-[1200px] lg:px-[73px] mx-auto flex flex-col md:flex-row justify-between items-center py-[40px] md:py-[80px]">
             <div class="w-full md:max-w-[480px] pr-[40px] hidden md:block">
                 <div class="h-[814px] relative">
-                     <div class="absolute w-[360px] h-[430px] bg-black left-0 top-0 overflow-hidden">
+                     <div class="absolute w-[360px] h-[430px]  left-0 top-0 overflow-hidden">
                         <img src="<?php echo $image5_url; ?>" alt="<?php echo $image5_alt; ?>" class="min-h-full min-w-full object-cover object-center">
                     </div>
-                    <div class="absolute w-[360px] h-[430px] bg-black right-0 bottom-0 overflow-hidden">
+                    <div class="absolute w-[360px] h-[430px]  right-0 bottom-0 overflow-hidden">
                         <img src="<?php echo $image6_url; ?>" alt="<?php echo $image6_alt; ?>" class="min-h-full min-w-full object-cover object-center">
                     </div>
                 </div>
@@ -110,10 +110,10 @@ $image8_alt = isset($image8['alt']) ? esc_attr($image8['alt']) : '';
                 <p><?php the_field('about_2_section_4_tekst_1');?></p>
                 <div class="w-full max-w-[333px] mx-auto md:hidden mt-[50px]">
                     <div class="h-[541px] relative">
-                        <div class="absolute w-[239px] h-[288px] bg-black left-0 top-0 overflow-hidden">
+                        <div class="absolute w-[239px] h-[288px]  left-0 top-0 overflow-hidden">
                             <img src="<?php echo $image5_url; ?>" alt="<?php echo $image5_alt; ?>" class="min-h-full min-w-full object-cover object-center">
                         </div>
-                        <div class="absolute w-[239px] h-[288px] bg-black right-0 bottom-0 overflow-hidden">
+                        <div class="absolute w-[239px] h-[288px]  right-0 bottom-0 overflow-hidden">
                             <img src="<?php echo $image6_url; ?>" alt="<?php echo $image6_alt; ?>" class="min-h-full min-w-full object-cover object-center">
                         </div>
                     </div>
@@ -127,14 +127,14 @@ $image8_alt = isset($image8['alt']) ? esc_attr($image8['alt']) : '';
      <section>
         <div class="w-full max-w-[390px] px-[15px] lg:max-w-[1200px] lg:px-[73px] mx-auto flex flex-col md:flex-row justify-between items-start my-[50px] md:my-[80px]">
             <div class="w-full md:max-w-[480px] md:pr-[40px]">
-                <div class="w-[270px] h-[408px] ml-auto mr-auto md:ml-[unset] md:mr-[unset] md:w-[280px] md:h-[420px] bg-black right-0 top-0 overflow-hidden">
+                <div class="w-[270px] h-[408px] ml-auto mr-auto md:ml-[unset] md:mr-[unset] md:w-[280px] md:h-[420px]  right-0 top-0 overflow-hidden">
                     <img src="<?php echo $image7_url; ?>" alt="<?php echo $image7_alt; ?>" class="min-h-full min-w-full object-cover object-center">
                 </div>
                 <h2 class="mt-[40px] md:mt-[10px] text-25"><?php the_field('about_2_section_5_titel_1');?></h2>
                 <p class="max-w-[390px] mt-[0px]"><?php the_field('about_2_section_5_tekst_1');?></p>
             </div>
             <div class="w-full md:max-w-[500px] mt-[50px] md:mt-[unset]">
-                <div class="w-[270px] h-[408px] ml-auto mr-auto md:ml-[unset] md:mr-[unset] md:w-[280px] md:h-[420px] bg-black right-0 top-0 overflow-hidden">
+                <div class="w-[270px] h-[408px] ml-auto mr-auto md:ml-[unset] md:mr-[unset] md:w-[280px] md:h-[420px]  right-0 top-0 overflow-hidden">
                     <img src="<?php echo $image8_url; ?>" alt="<?php echo $image8_alt; ?>" class="min-h-full min-w-full object-cover object-center">
                 </div>
                 <h2 class="mt-[40px] md:mt-[10px] text-25"><?php the_field('about_2_section_5_titel_2');?></h2>

@@ -933,3 +933,17 @@ add_action( 'rest_api_init', function () {
 // }
 
 // add_action('wp_footer', 'rewrite_image_urls_js');
+
+
+function log_theme_version_in_console() {
+    $theme_dir = get_template_directory(); // Pad naar het huidige thema
+    $version_file = $theme_dir . '/version.txt';
+
+    if (file_exists($version_file)) {
+        $version = trim(file_get_contents($version_file)); // Lees en trim de inhoud
+        if ($version) {
+            echo "<script>console.log('Theme version: " . esc_js($version) . "');</script>";
+        }
+    }
+}
+add_action('wp_footer', 'log_theme_version_in_console');
