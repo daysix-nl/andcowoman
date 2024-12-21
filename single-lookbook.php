@@ -10,7 +10,7 @@
 get_header(); ?>
 
 <main id="content">
-    <div class="container pt-full">
+    <div class="container pt-half">
         <p class="w-fit mx-auto">Lookbook</p>
         <h1 class="text-30 md:text-38 font-bold w-fit mx-auto"><?php the_title();?></h1>
     </div>
