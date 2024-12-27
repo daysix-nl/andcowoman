@@ -90,19 +90,11 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d7dcde",endCo
         <div class="col-span-4 md:col-span-1">
             <h4 class="text-30 lg:text-40 xl:text-48 leading-35 lg:leading-40 xl:leading-50 font-bold max-w-[300px]">
                 <?php if(ICL_LANGUAGE_CODE=='nl'): ?>
-<<<<<<< HEAD
                     Winter </br> SALE </br> -50% korting
                 <?php elseif(ICL_LANGUAGE_CODE=='en'): ?>
                     Winter </br> SALE </br> -50% off
                 <?php elseif(ICL_LANGUAGE_CODE=='de'): ?>
                     Winter </br> SALE </br> -50% rabatt
-=======
-                    Winter </br> SALE -50%</br>korting
-                <?php elseif(ICL_LANGUAGE_CODE=='en'): ?>
-                    Winter </br> SALE </br> -50% off
-                <?php elseif(ICL_LANGUAGE_CODE=='de'): ?>
-                    Winter </br> SALE -50%</br>rabatt
->>>>>>> refs/remotes/origin/main
                 <?php endif; ?>
             </h4>
             <a class="uppercase h-4 px-[30px] flex justify-center items-center text-white bg-[#000000] w-fit hover:opacity-80 hover:bg-[#000000] mt-3 text-14 font-bold" href="/shop">
