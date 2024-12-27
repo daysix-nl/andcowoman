@@ -43,14 +43,14 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d7dcde",endCo
                 <div id="carouselExampleCaptions" class="carousel carousel-fade slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active relative" data-bs-interval="5000">
-<!--                         <div style="background-image: url('<?php the_field('home_section_1_slide_1_afbeelding');?>');" class="d-block w-100 img-header"></div> -->
-                        <video autoplay="" loop="" muted="" playsinline="" class="d-block img-header min-h-[400px] md:min-h-[560px]">
+			<div style="background-image: url('<?php the_field('home_section_1_slide_1_afbeelding');?>');" class="d-block w-100 img-header"></div>
+<!--                         <video autoplay="" loop="" muted="" playsinline="" class="d-block img-header min-h-[400px] md:min-h-[560px]">
                             <source src="https://andcowoman.com/wp-content/uploads/2024/10/sw-241.mp4">
-                        </video>
+                        </video> -->
                         <div class="carousel-caption caption-delay z-[2]" >
-                            <h2 class="pb-blocks <?php the_field('home_section_1_slide_1_kleur');?> text-38 leading-38 md:text-50 md:leading-50"><?php the_field('home_section_1_slide_1_titel');?></h2>
+<!--                             <h2 class="pb-blocks <?php the_field('home_section_1_slide_1_kleur');?> text-38 leading-38 md:text-50 md:leading-50"><?php the_field('home_section_1_slide_1_titel');?></h2>
                             <h3 class="<?php the_field('home_section_1_slide_1_kleur');?> text-28 leading-28 md:text-30 md:leading-30"><?php the_field('home_section_1_slide_1_tekst');?></h3>
-                            <a href="<?php the_field('home_section_1_slide_1_cta_link');?>"><button class="bg-white h-[40px] w-[120px] flex items-center justify-center mt-4 hover:opacity-80 duration-300"><span class="uppercase font-bold text-14"><?php the_field('home_section_1_slide_1_cta_tekst');?></span></button></a>
+                            <a href="<?php the_field('home_section_1_slide_1_cta_link');?>"><button class="bg-white h-[40px] w-[120px] flex items-center justify-center mt-4 hover:opacity-80 duration-300"><span class="uppercase font-bold text-14"><?php the_field('home_section_1_slide_1_cta_tekst');?></span></button></a> -->
                         </div>
                         <div class="absolute w-[50%] h-full top-0 right-0 bottom-0 bg-gradient-to-r from-[transparent] to-[0001] z-[1] scale-shadow"></div>
                         <!-- </div>
