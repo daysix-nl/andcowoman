@@ -43,14 +43,14 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d7dcde",endCo
                 <div id="carouselExampleCaptions" class="carousel carousel-fade slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active relative" data-bs-interval="5000">
-<!--                         <div style="background-image: url('<?php the_field('home_section_1_slide_1_afbeelding');?>');" class="d-block w-100 img-header"></div> -->
-                        <video autoplay="" loop="" muted="" playsinline="" class="d-block img-header min-h-[400px] md:min-h-[560px]">
+			<div style="background-image: url('<?php the_field('home_section_1_slide_1_afbeelding');?>');" class="d-block w-100 img-header"></div>
+<!--                         <video autoplay="" loop="" muted="" playsinline="" class="d-block img-header min-h-[400px] md:min-h-[560px]">
                             <source src="https://andcowoman.com/wp-content/uploads/2024/10/sw-241.mp4">
-                        </video>
+                        </video> -->
                         <div class="carousel-caption caption-delay z-[2]" >
-                            <h2 class="pb-blocks <?php the_field('home_section_1_slide_1_kleur');?> text-38 leading-38 md:text-50 md:leading-50"><?php the_field('home_section_1_slide_1_titel');?></h2>
+<!--                             <h2 class="pb-blocks <?php the_field('home_section_1_slide_1_kleur');?> text-38 leading-38 md:text-50 md:leading-50"><?php the_field('home_section_1_slide_1_titel');?></h2>
                             <h3 class="<?php the_field('home_section_1_slide_1_kleur');?> text-28 leading-28 md:text-30 md:leading-30"><?php the_field('home_section_1_slide_1_tekst');?></h3>
-                            <a href="<?php the_field('home_section_1_slide_1_cta_link');?>"><button class="bg-white h-[40px] w-[120px] flex items-center justify-center mt-4 hover:opacity-80 duration-300"><span class="uppercase font-bold text-14"><?php the_field('home_section_1_slide_1_cta_tekst');?></span></button></a>
+                            <a href="<?php the_field('home_section_1_slide_1_cta_link');?>"><button class="bg-white h-[40px] w-[120px] flex items-center justify-center mt-4 hover:opacity-80 duration-300"><span class="uppercase font-bold text-14"><?php the_field('home_section_1_slide_1_cta_tekst');?></span></button></a> -->
                         </div>
                         <div class="absolute w-[50%] h-full top-0 right-0 bottom-0 bg-gradient-to-r from-[transparent] to-[0001] z-[1] scale-shadow"></div>
                         <!-- </div>
@@ -90,11 +90,11 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d7dcde",endCo
         <div class="col-span-4 md:col-span-1">
             <h4 class="text-30 lg:text-40 xl:text-48 leading-35 lg:leading-40 xl:leading-50 font-bold max-w-[300px]">
                 <?php if(ICL_LANGUAGE_CODE=='nl'): ?>
-                    Onze </br> nieuwe </br> collectie
+                    Winter </br> SALE </br> -50% korting
                 <?php elseif(ICL_LANGUAGE_CODE=='en'): ?>
-                    Our </br> new </br> collection
+                    Winter </br> SALE </br> -50% off
                 <?php elseif(ICL_LANGUAGE_CODE=='de'): ?>
-                    Unsere </br> neue  </br> kollektion
+                    Winter </br> SALE </br> -50% rabatt
                 <?php endif; ?>
             </h4>
             <a class="uppercase h-4 px-[30px] flex justify-center items-center text-white bg-[#000000] w-fit hover:opacity-80 hover:bg-[#000000] mt-3 text-14 font-bold" href="/shop">
@@ -119,7 +119,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d7dcde",endCo
                             'meta_query' => array(
                                 array(
                                     'key' => '_sku', // The meta key to query. In this case, it's '_sku' which is the SKU of the product.
-                                    'value' => array('2910-300', '2900-294', '2880-300'), // An array of SKUs
+                                    'value' => array('2894-312', '2880-300', '2888-312'), // An array of SKUs
                                     'compare' => 'IN', // Compares if the SKU is in the array
                                 ),
                             )
@@ -325,4 +325,3 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#d7dcde",endCo
 </main>
 
 <?php get_footer(); ?>
-
