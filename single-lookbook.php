@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<main id="content">
+<main id="content" class="overflow-hidden">
     <div class="container pt-half">
         <p class="w-fit mx-auto">Lookbook</p>
         <h1 class="text-30 md:text-38 font-bold w-fit mx-auto"><?php the_title();?></h1>
