@@ -269,11 +269,11 @@ function initializeFlipbook() {
     if (window.innerWidth <= 576) {
         // Mobiel
         flipbookWidth = 350;
-        flipbookHeight = 225;
+        flipbookHeight = 233;
     } else if (window.innerWidth <= 940) {
         // Tablet
         flipbookWidth = 500;
-        flipbookHeight = 350;
+        flipbookHeight = 333;
     } else {
         // Desktop
         flipbookWidth = 900;
